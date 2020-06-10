@@ -25,6 +25,7 @@ public class NumberHolder {
     }
 
     public static Integer getNextAtomicInt() {
+        ID_HOLDER.remove();
         System.out.println("Previous value: " + ID_HOLDER.get() + " thread: " + Thread.currentThread().getName());
 
         try {
