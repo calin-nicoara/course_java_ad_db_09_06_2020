@@ -16,7 +16,7 @@ public class CitizenCsvTest {
         List<Citizen> allCitizens = citizenCsvProcessor.findAllCitizens();
 
         assert allCitizens.size() == 2;
-        Citizen citizen1 = new Citizen(1L, "Ion Popescu",
+        Citizen citizen1 = new Citizen(1L, "Ions Popescu",
                 LocalDate.of(1993, 2, 1), "Romanian",
                 false);
 
