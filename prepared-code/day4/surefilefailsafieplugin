@@ -1,0 +1,34 @@
+<plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <configuration>
+                        <includes>
+                            <include>**/*Spec.java</include>
+                            <include>**/*Tests.*</include>
+                            <include>**/*Test.*</include>
+                        </includes>
+                        <!-- Force alphabetical order to have a reproducible build -->
+                        <runOrder>alphabetical</runOrder>
+                    </configuration>
+                </plugin>
+
+<plugin>
+                    <artifactId>maven-failsafe-plugin</artifactId>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>integration-test</goal>
+                                <goal>verify</goal>
+                            </goals>
+
+                            <configuration>
+                                <!-- Sets the VM argument line used when integration tests are run. -->
+                                <argLine>@{failsafeArgLine}</argLine>
+                                <includes>
+                                    <include>**/*SpecIT.java</include>
+                                </includes>
+                                <runOrder>alphabetical</runOrder>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
